@@ -56,4 +56,4 @@ RUN pip install -e . --user --no-cache-dir --no-build-isolation \
   
 ENTRYPOINT ["freqtrade"]
 # Default to trade mode
-CMD [ "trade" ]
+CMD [ "trade -s Zeus --freqaimodel LightGBMRegressor" ]
