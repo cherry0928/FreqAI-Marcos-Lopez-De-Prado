@@ -1,0 +1,35 @@
+{
+  "strategy_name": "Zeus",
+  "params": {
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 1
+    },
+    "buy": {
+      "buy_cat": "<R",
+      "buy_real": 0.0474,
+      "leverage_num": 5
+    },
+    "sell": {
+      "sell_cat": "=R",
+      "sell_real": 0.8214
+    },
+    "protection": {},
+    "roi": {
+      "0": 0.15,
+      "28": 0.089,
+      "67": 0.04,
+      "86": 0
+    },
+    "stoploss": {
+      "stoploss": -0.22
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2024-02-23 15:50:53.268129+00:00"
+}
