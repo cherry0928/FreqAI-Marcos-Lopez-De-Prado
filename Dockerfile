@@ -50,7 +50,7 @@ USER ftuser
 # Install and execute
 COPY --chown=ftuser:ftuser . /freqtrade/
 COPY --chown=ftuser:ftuser user_data/config.json /freqtrade/user_data/
-
+COPY --chown=ftuser:ftuser user_data/strategies /freqtrade/user_data/
 RUN pip install -e . --user --no-cache-dir --no-build-isolation \
   && mkdir /freqtrade/user_data/ \
   && freqtrade install-ui
