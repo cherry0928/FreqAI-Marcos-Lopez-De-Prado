@@ -51,8 +51,9 @@ COPY --chown=ftuser:ftuser . /freqtrade/
 
 RUN pip install -e . --user --no-cache-dir --no-build-isolation \
   && mkdir /freqtrade/user_data/ \
-  && freqtrade install-ui
-RUN wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/config.json user_data/config.json
+  && freqtrade install-ui \
+  && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/config.json /freqtrade/user_data/config.json
+  
 ENTRYPOINT ["freqtrade"]
 # Default to trade mode
 CMD [ "trade" ]
