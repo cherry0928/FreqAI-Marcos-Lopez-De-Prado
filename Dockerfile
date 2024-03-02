@@ -29,6 +29,7 @@ RUN  apt-get update \
 
 # Install TA-lib
 COPY build_helpers/* /tmp/
+COPY user_data/strategies/* /freqtrade/user_data/strategies/
 RUN cd /tmp && /tmp/install_ta-lib.sh && rm -r /tmp/*ta-lib*
 ENV LD_LIBRARY_PATH /usr/local/lib
 
@@ -53,11 +54,11 @@ RUN pip install -e . --user --no-cache-dir --no-build-isolation \
   && mkdir /freqtrade/user_data/ \
   && freqtrade install-ui \
   && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/config.json \
-  && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/strategies/Zeus.py \
-  && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/strategies/Zeus.json \
-  && mv config.json /freqtrade/user_data/config.json \
-  && mv Zeus.py /freqtrade/user_data/strategies/Zeus.py \
-  && mv Zeus.json /freqtrade/user_data/strategies/Zeus.json
+  # && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/strategies/Zeus.py \
+  # && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/strategies/Zeus.json \
+  && mv config.json /freqtrade/user_data/config.json 
+  # && mv Zeus.py /freqtrade/user_data/strategies/Zeus.py \
+  # && mv Zeus.json /freqtrade/user_data/strategies/Zeus.json
 
 ENTRYPOINT ["freqtrade"]
 # Default to trade mode
