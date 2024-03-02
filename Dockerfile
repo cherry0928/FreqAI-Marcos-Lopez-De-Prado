@@ -56,8 +56,9 @@ RUN pip install -e . --user --no-cache-dir --no-build-isolation \
   && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/strategies/Zeus.py \
   && wget https://raw.githubusercontent.com/cherry0928/FreqAI-Marcos-Lopez-De-Prado/litmus-ai/user_data/strategies/Zeus.json \
   && mv config.json /freqtrade/user_data/config.json \
-  && mv Zeus.py /freqtrade/user_data/strategies/ \
-  && mv Zeus.json /freqtrade/user_data/strategies/
+  && mv Zeus.py /freqtrade/user_data/strategies/Zeus.py \
+  && mv Zeus.json /freqtrade/user_data/strategies/Zeus.json
+
 ENTRYPOINT ["freqtrade"]
 # Default to trade mode
 # CMD [ "trade", "-s", "Zeus", "--freqaimodel", "LightGBMRegressor" ]
