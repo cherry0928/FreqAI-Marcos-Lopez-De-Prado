@@ -29,7 +29,7 @@ RUN  apt-get update \
 
 # Install TA-lib
 COPY build_helpers/* /tmp/
-COPY user_data/strategies/* /freqtrade/user_data/strategies/
+COPY user_data/* /freqtrade/user_data/
 RUN cd /tmp && /tmp/install_ta-lib.sh && rm -r /tmp/*ta-lib*
 ENV LD_LIBRARY_PATH /usr/local/lib
 
